@@ -10,7 +10,7 @@ const sections = [
   {
     label: "Featured",
     items: [
-      { icon: "🗺", title: "MENA MEO Roadmap FY26-27", desc: "Your month-by-month guide from appointment to handover", href: "#", badge: "New" },
+      { icon: "🗺", title: "MENA MEO Roadmap FY26-27", desc: "Your month-by-month guide from appointment to handover", href: "https://drive.google.com/file/d/1av2CBcqTPVJ275so9iD2VHBiXXfpVq23/view?usp=sharing", badge: "New", external: true },
       { icon: "👥", title: "MENA MEOs FY26-27", desc: "Meet your incoming MEOs across the region", href: "https://canva.link/hrsod1iw8mh9olx", badge: "New", external: true },
     ],
   },
@@ -33,7 +33,7 @@ const sections = [
     label: "Onboarding",
     items: [
       { icon: "✅", title: "MENA New Member Onboarding Checklist", desc: "Step-by-step onboarding guide for chapter MEOs", href: "https://www.canva.com/design/DAG4YMZWqwA/y5SoIsTgoVx7FchErvidbg/view?utm_content=DAG4YMZWqwA&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=he6502653e9", external: true },
-      { icon: "🧭", title: "New Member Onboarding Hub", desc: "YPO's global onboarding journey for new members", href: "https://event.ypo.org/event/62619368-5c0a-46b2-9e35-b6553fa484f6/my-ypo-journey?RefId=DEV", external: true },
+      { icon: "🧭", title: "New Member Onboarding Hub", desc: "YPO global onboarding journey for new members", href: "https://event.ypo.org/event/62619368-5c0a-46b2-9e35-b6553fa484f6/my-ypo-journey?RefId=DEV", external: true },
     ],
   },
   {
@@ -80,62 +80,62 @@ function LinkRow({ item }) {
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       style={{
-        display: "flex", alignItems: "center", gap: 14,
-        padding: "13px 16px", borderRadius: 10,
+        display: "flex", alignItems: "center", gap: 12,
+        padding: "11px 14px", borderRadius: 10,
         border: `1px solid ${hovered ? NAVY : "#dde4ef"}`,
         background: hovered ? LIGHT_NAVY : "#fff",
-        marginBottom: 8, textDecoration: "none",
+        marginBottom: 7, textDecoration: "none",
         transition: "all 0.15s",
         boxShadow: hovered ? "0 2px 8px rgba(0,47,108,0.08)" : "none",
       }}
     >
       <div style={{
-        width: 36, height: 36, borderRadius: 8,
+        width: 32, height: 32, borderRadius: 8,
         background: LIGHT_NAVY, display: "flex",
         alignItems: "center", justifyContent: "center",
-        fontSize: 17, flexShrink: 0,
+        fontSize: 15, flexShrink: 0,
       }}>{item.icon}</div>
       <div style={{ flex: 1, minWidth: 0 }}>
-        <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 2, flexWrap: "wrap" }}>
-          <span style={{ fontSize: 13.5, fontWeight: 600, color: NAVY }}>{item.title}</span>
+        <div style={{ display: "flex", alignItems: "center", gap: 7, marginBottom: 1, flexWrap: "wrap" }}>
+          <span style={{ fontSize: 13, fontWeight: 600, color: NAVY }}>{item.title}</span>
           {item.badge && (
-            <span style={{ background: GREEN, color: "#fff", fontSize: 9.5, fontWeight: 700, padding: "1px 7px", borderRadius: 20, letterSpacing: "0.04em" }}>
+            <span style={{ background: GREEN, color: "#fff", fontSize: 9, fontWeight: 700, padding: "1px 6px", borderRadius: 20 }}>
               {item.badge}
             </span>
           )}
         </div>
-        <div style={{ fontSize: 11.5, color: "#5a6a85", lineHeight: 1.4 }}>{item.desc}</div>
+        <div style={{ fontSize: 11, color: "#5a6a85", lineHeight: 1.4 }}>{item.desc}</div>
       </div>
-      <div style={{ color: "#8899bb", fontSize: 14, flexShrink: 0 }}>{item.external ? "↗" : "→"}</div>
+      <div style={{ color: "#8899bb", fontSize: 13, flexShrink: 0 }}>{item.external ? "↗" : "→"}</div>
     </a>
   );
 }
 
 function ContactCard({ contact }) {
   return (
-    <div style={{ border: "1px solid #dde4ef", borderRadius: 10, overflow: "hidden", marginBottom: 8, background: "#fff" }}>
-      <div style={{ background: contact.incoming ? "#1a5c2a" : NAVY, padding: "10px 16px", display: "flex", alignItems: "center", gap: 12 }}>
-        <div style={{ width: 38, height: 38, borderRadius: "50%", background: "rgba(255,255,255,0.15)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 13, fontWeight: 700, color: "#fff", flexShrink: 0 }}>
+    <div style={{ border: "1px solid #dde4ef", borderRadius: 10, overflow: "hidden", marginBottom: 7, background: "#fff" }}>
+      <div style={{ background: contact.incoming ? "#1a5c2a" : NAVY, padding: "9px 14px", display: "flex", alignItems: "center", gap: 10 }}>
+        <div style={{ width: 34, height: 34, borderRadius: "50%", background: "rgba(255,255,255,0.15)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 12, fontWeight: 700, color: "#fff", flexShrink: 0 }}>
           {contact.initials}
         </div>
-        <div style={{ flex: 1 }}>
-          <div style={{ display: "flex", alignItems: "center", gap: 8, flexWrap: "wrap" }}>
-            <span style={{ fontSize: 13.5, fontWeight: 700, color: "#fff" }}>{contact.name}</span>
-            <span style={{ background: "rgba(255,255,255,0.2)", color: "#fff", fontSize: 9.5, fontWeight: 600, padding: "1px 7px", borderRadius: 20 }}>{contact.term}</span>
-            {contact.incoming && <span style={{ background: GREEN, color: "#fff", fontSize: 9.5, fontWeight: 600, padding: "1px 7px", borderRadius: 20 }}>Incoming</span>}
+        <div style={{ flex: 1, minWidth: 0 }}>
+          <div style={{ display: "flex", alignItems: "center", gap: 6, flexWrap: "wrap" }}>
+            <span style={{ fontSize: 13, fontWeight: 700, color: "#fff" }}>{contact.name}</span>
+            <span style={{ background: "rgba(255,255,255,0.2)", color: "#fff", fontSize: 9, fontWeight: 600, padding: "1px 6px", borderRadius: 20 }}>{contact.term}</span>
+            {contact.incoming && <span style={{ background: GREEN, color: "#fff", fontSize: 9, fontWeight: 600, padding: "1px 6px", borderRadius: 20 }}>Incoming</span>}
           </div>
-          <div style={{ fontSize: 11, color: "rgba(255,255,255,0.7)", marginTop: 2 }}>{contact.role} · {contact.chapter}</div>
+          <div style={{ fontSize: 10.5, color: "rgba(255,255,255,0.7)", marginTop: 1, whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>{contact.role} · {contact.chapter}</div>
         </div>
       </div>
-      <div style={{ padding: "12px 16px", display: "flex", gap: 10, flexWrap: "wrap" }}>
-        <a href={contact.whatsapp} target="_blank" rel="noopener noreferrer" style={{ display: "inline-flex", alignItems: "center", gap: 6, background: "#E8F5E9", color: "#2E7D32", border: "1px solid #C8E6C9", fontSize: 12, fontWeight: 600, padding: "6px 14px", borderRadius: 20, textDecoration: "none" }}>
+      <div style={{ padding: "10px 14px", display: "flex", gap: 8, flexWrap: "wrap" }}>
+        <a href={contact.whatsapp} target="_blank" rel="noopener noreferrer" style={{ display: "inline-flex", alignItems: "center", gap: 5, background: "#E8F5E9", color: "#2E7D32", border: "1px solid #C8E6C9", fontSize: 11, fontWeight: 600, padding: "5px 11px", borderRadius: 20, textDecoration: "none" }}>
           💬 {contact.whatsappDisplay}
         </a>
-        <a href={contact.email} style={{ display: "inline-flex", alignItems: "center", gap: 6, background: LIGHT_NAVY, color: NAVY, border: "1px solid #c8d4e8", fontSize: 12, fontWeight: 600, padding: "6px 14px", borderRadius: 20, textDecoration: "none" }}>
+        <a href={contact.email} style={{ display: "inline-flex", alignItems: "center", gap: 5, background: LIGHT_NAVY, color: NAVY, border: "1px solid #c8d4e8", fontSize: 11, fontWeight: 600, padding: "5px 11px", borderRadius: 20, textDecoration: "none" }}>
           ✉️ Email
         </a>
         {contact.profile && (
-          <a href={contact.profile} target="_blank" rel="noopener noreferrer" style={{ display: "inline-flex", alignItems: "center", gap: 6, background: "#f0f2f5", color: "#4a5568", border: "1px solid #d0d5dd", fontSize: 12, fontWeight: 600, padding: "6px 14px", borderRadius: 20, textDecoration: "none" }}>
+          <a href={contact.profile} target="_blank" rel="noopener noreferrer" style={{ display: "inline-flex", alignItems: "center", gap: 5, background: "#f0f2f5", color: "#4a5568", border: "1px solid #d0d5dd", fontSize: 11, fontWeight: 600, padding: "5px 11px", borderRadius: 20, textDecoration: "none" }}>
             👤 YPO Profile
           </a>
         )}
@@ -147,27 +147,27 @@ function ContactCard({ contact }) {
 export default function MENAMEOResourceHub() {
   return (
     <div style={{ width: "100%", minHeight: "100vh", background: "#f0f2f5", fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", overflowX: "hidden" }}>
-      <div style={{ maxWidth: 520, margin: "0 auto" }}>
+      <div style={{ maxWidth: 480, margin: "0 auto" }}>
 
-        <div style={{ background: NAVY, padding: "16px 24px", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-          <div>
-            <div style={{ fontSize: 16, fontWeight: 700, color: "#fff" }}>YPO MENA</div>
-            <div style={{ fontSize: 11, color: "rgba(255,255,255,0.65)", marginTop: 2 }}>Member Engagement · Everything you need for your MEO year</div>
+        <div style={{ background: NAVY, padding: "14px 20px", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+          <div style={{ flex: 1, minWidth: 0, paddingRight: 12 }}>
+            <div style={{ fontSize: 15, fontWeight: 700, color: "#fff", whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>YPO MENA Member Engagement</div>
+            <div style={{ fontSize: 11, color: "rgba(255,255,255,0.65)", marginTop: 2 }}>Everything you need for your MEO year</div>
           </div>
-          <img src={YPO_LOGO} style={{ height: 64, objectFit: "contain", mixBlendMode: "screen" }} alt="YPO Middle East & North Africa Region" />
+          <img src={YPO_LOGO} style={{ height: 52, width: "auto", objectFit: "contain", mixBlendMode: "screen", flexShrink: 0 }} alt="YPO Middle East & North Africa Region" />
         </div>
 
-        <div style={{ padding: "4px 16px 40px" }}>
+        <div style={{ padding: "4px 14px 40px" }}>
           {sections.map((section) => (
             <div key={section.label}>
-              <div style={{ fontSize: 10, fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", color: "#8899bb", margin: "20px 0 8px 2px" }}>
+              <div style={{ fontSize: 9.5, fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", color: "#8899bb", margin: "18px 0 7px 2px" }}>
                 {section.label}
               </div>
               {section.items.map((item) => <LinkRow key={item.title} item={item} />)}
             </div>
           ))}
 
-          <div style={{ fontSize: 10, fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", color: "#8899bb", margin: "20px 0 8px 2px" }}>
+          <div style={{ fontSize: 9.5, fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", color: "#8899bb", margin: "18px 0 7px 2px" }}>
             Your regional MEOs
           </div>
           {contacts.map((c) => <ContactCard key={c.name} contact={c} />)}
