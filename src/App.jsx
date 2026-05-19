@@ -33,6 +33,7 @@ const sections = [
     label: "Onboarding",
     items: [
       { icon: "✅", title: "MENA New Member Onboarding Checklist", desc: "Step-by-step onboarding guide for chapter MEOs", href: "https://www.canva.com/design/DAG4YMZWqwA/y5SoIsTgoVx7FchErvidbg/view?utm_content=DAG4YMZWqwA&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=he6502653e9", external: true },
+      { icon: "🧭", title: "New Member Onboarding Hub", desc: "YPO's global onboarding journey for new members", href: "https://event.ypo.org/event/62619368-5c0a-46b2-9e35-b6553fa484f6/my-ypo-journey?RefId=DEV", external: true },
     ],
   },
   {
@@ -150,8 +151,8 @@ export default function MENAMEOResourceHub() {
 
         <div style={{ background: NAVY, padding: "16px 24px", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
           <div>
-            <div style={{ fontSize: 16, fontWeight: 700, color: "#fff" }}>YPO MENA Member Engagement</div>
-            <div style={{ fontSize: 11, color: "rgba(255,255,255,0.65)", marginTop: 2 }}>Resource Hub · Everything you need for your MEO year</div>
+            <div style={{ fontSize: 16, fontWeight: 700, color: "#fff" }}>YPO MENA</div>
+            <div style={{ fontSize: 11, color: "rgba(255,255,255,0.65)", marginTop: 2 }}>Member Engagement · Everything you need for your MEO year</div>
           </div>
           <img src={YPO_LOGO} style={{ height: 64, objectFit: "contain", mixBlendMode: "screen" }} alt="YPO Middle East & North Africa Region" />
         </div>
